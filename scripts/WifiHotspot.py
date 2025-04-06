@@ -30,8 +30,8 @@ class WifiHotspot:
             self.lines[selection] = self.inpt.getInput(self.lines[selection - 1], "")
             self.start(self.master)
         elif selection == 4:
-            os.system("sudo systemctl start NetworkManager.service")
-            os.system("sudo nmcli connection delete t-450")
+            print(os.system("sudo systemctl start NetworkManager.service"))
+            print(os.system("sudo nmcli connection delete t-450"))
             print(os.system("sudo nmcli device wifi hotspot con-name t-450 ssid " + self.lines[1] + " password " + self.lines[3]))
             self.stop()
             self.master.startBack()
