@@ -31,9 +31,7 @@ class WifiHotspot:
             self.start(self.master)
         elif selection == 4:
             os.system("sudo nmcli connection delete t-450")
-            self.lines[0] = os.system("sudo nmcli device wifi hotspot con-name t-450 ssid " + self.lines[1] + " password " + self.lines[3])
-            self.start(self.master)
-            time.sleep(2)
+            print(os.system("sudo nmcli device wifi hotspot con-name t-450 ssid " + self.lines[1] + " password " + self.lines[3]))
             self.stop()
             self.master.startBack()
         elif selection == 5:
